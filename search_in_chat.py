@@ -52,13 +52,13 @@ class SearchChat(unittest.TestCase):
       self.driver.find_element(By.CSS_SELECTOR, ".home-popup__close-area").click()
     finally:
       pass
-   
+  
   def getUserAccount(self, filename):
     file = open(filename,"r")
     account = file.readlines()
     file.close()
     return account 
-    
+  
   def login(self):
     account = self.getUserAccount("./account.text")
     loginField = self.driver.find_element(By.NAME,"loginKey")
@@ -71,9 +71,9 @@ class SearchChat(unittest.TestCase):
     passwordField.send_keys(Keys.RETURN)
     self.driver.implicitly_wait(10)
     self.close_add()
-    
-  def test_tC001001(self):
-    text = readData("search_chat")[0][1]
+  
+  @parameterized.expand(readData("search_chat"))
+  def test_tC001001(self,no,text):
     print('Run test 1')
     # Test name: TC-001-001
     # Step # | name | target | value
@@ -86,9 +86,8 @@ class SearchChat(unittest.TestCase):
     # 6 | type | css=.lKoAzHGT7l | clothing
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
 
- 
-  def test_tC001002(self):
-    text = readData("search_chat")[1][1]
+  @parameterized.expand(readData("search_chat"))
+  def test_tC001002(self,no,text):
     print('Run test 2')
     # Test name: TC-001-002
     # Step # | name | target | value
@@ -101,9 +100,8 @@ class SearchChat(unittest.TestCase):
     # 6 | type | css=.lKoAzHGT7l | khongbietgi
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
 
- 
-  def test_tC001003(self):
-    text = readData("search_chat")[2][1]
+  @parameterized.expand(readData("search_chat"))
+  def test_tC001003(self,no,text):
     print('Run test 3')
     # Test name: TC-001-003
     # Step # | name | target | value
@@ -116,9 +114,8 @@ class SearchChat(unittest.TestCase):
     # 6 | type | css=.lKoAzHGT7l | logitech
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
 
- 
-  def test_tC002001(self):
-    text = readData("search_chat")[3][1]
+  @parameterized.expand(readData("search_chat"))
+  def test_tC002001(self,no,text):
     print('Run test 4')
     # Test name: TC-002-001
     # Step # | name | target | value
@@ -135,9 +132,8 @@ class SearchChat(unittest.TestCase):
     # 8 | type | css=.lKoAzHGT7l | clothing
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
 
- 
-  def test_tC002002(self):
-    text = readData("search_chat")[4][1]
+  @parameterized.expand(readData("search_chat"))
+  def test_tC002002(self,no,text):
     print('Run test 5')
     # Test name: TC-002-002
     # Step # | name | target | value
@@ -154,9 +150,8 @@ class SearchChat(unittest.TestCase):
     # 8 | type | css=.lKoAzHGT7l | logitech
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
     
- 
-  def test_tC002003(self):
-    text = readData("search_chat")[5][1]
+  @parameterized.expand(readData("search_chat"))
+  def test_tC002003(self,no,text):
     print('Run test 6')
     # Test name: TC-002-003
     # Step # | name | target | value
@@ -173,9 +168,8 @@ class SearchChat(unittest.TestCase):
     # 8 | type | css=.lKoAzHGT7l | duochoalinh
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
 
- 
-  def test_tC002004(self):
-    text = readData("search_chat")[6][1]
+  @parameterized.expand(readData("search_chat"))
+  def test_tC002004(self,no,text):
     print('Run test 7')
     # Test name: TC-002-004
     # Step # | name | target | value
@@ -194,9 +188,8 @@ class SearchChat(unittest.TestCase):
     # 9 | type | css=.lKoAzHGT7l | logitech
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
 
- 
-  def test_tC002005(self):
-    text = readData("search_chat")[7][1]
+  @parameterized.expand(readData("search_chat"))
+  def test_tC002005(self,no,text):
     print('Run test 8')
     # Test name: TC-002-005
     # Step # | name | target | value
@@ -215,9 +208,8 @@ class SearchChat(unittest.TestCase):
     # 9 | type | css=.lKoAzHGT7l | innisfreevietnam
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
 
- 
-  def test_tC002006(self):
-    text = readData("search_chat")[8][1]
+  @parameterized.expand(readData("search_chat"))
+  def test_tC002006(self,no,text):
     print('Run test 9')
     # Test name: TC-002-006
     # Step # | name | target | value
