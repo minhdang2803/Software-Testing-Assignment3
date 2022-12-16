@@ -1,5 +1,6 @@
 # Software-Testing-Assignment3
 Step1 : install selenium package
+
 Step2 : install dependencies:
   - install pip
   - pip install xlrd==1.2.0
