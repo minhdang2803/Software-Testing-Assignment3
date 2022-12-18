@@ -10,28 +10,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import time
 import unittest
-from xlrd import open_workbook #pip install xlrd==1.2.0
 from parameterized import parameterized #pip install parameterized
-
-def readData(sheetName):
-    data_test = open_workbook("./dataSheet.xlsx")
-    values = []
-    s = data_test.sheet_by_name(sheetName)
-    for row in range(1, s.nrows):
-        col_names = s.row(0)
-        col_value = []
-        for name, col in zip(col_names, range(s.ncols)):
-            value = (s.cell(row, col).value)
-            try:
-                value = str(int(value))
-            except:
-                pass
-            col_value.append(value)
-        values.append(col_value)
-    return values
+from helper_functions import readData
     
 class SearchChat(unittest.TestCase):
-      
   def setUp(self):
     self.driver = webdriver.Chrome()
     self.driver.implicitly_wait(10)
@@ -231,4 +213,3 @@ class SearchChat(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
