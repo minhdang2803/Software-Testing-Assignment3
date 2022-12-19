@@ -216,7 +216,7 @@ class SearchChat(unittest.TestCase):
 #Voucher Redeem Test    
   @parameterized.expand(readData("voucher_redeem"))
   def test_tC003001(self,no,text):
-      # Test name: Voucher Redeem
+      # Test name: TC-003-001
       # Step # | name | target | value
       # 1 | access profile
       self.driver.find_element(By.CSS_SELECTOR, ".navbar__username").click()
@@ -240,7 +240,7 @@ class SearchChat(unittest.TestCase):
   
   @parameterized.expand(readData("voucher_redeem"))
   def test_tC003002(self,no,text):
-      # Test name: Voucher Redeem
+      # Test name: TC-003-002
       # Step # | name | target | value
       # 1 | access profile
       self.driver.find_element(By.CSS_SELECTOR, ".navbar__username").click()
@@ -263,7 +263,7 @@ class SearchChat(unittest.TestCase):
 
   @parameterized.expand(readData("voucher_redeem"))
   def test_tC003003(self,no,text):
-      # Test name: Voucher Redeem
+      # Test name: TC-003-003
       # Step # | name | target | value
       # 1 | access profile
       self.driver.find_element(By.CSS_SELECTOR, ".navbar__username").click()
@@ -286,7 +286,7 @@ class SearchChat(unittest.TestCase):
 
   @parameterized.expand(readData("voucher_redeem"))
   def test_tC003004(self,no,text):
-      # Test name: Voucher Redeem
+      # Test name: TC-003-004
       # Step # | name | target | value
       # 1 | access profile
       self.driver.find_element(By.CSS_SELECTOR, ".navbar__username").click()
@@ -307,6 +307,38 @@ class SearchChat(unittest.TestCase):
       actions = ActionChains(self.driver)
       actions.move_to_element(element).perform()
 
+#Send Message Test
+  @parameterized.expand(readData("send_message")) 
+  def test_tC004001(self):
+    # Test name: TC-004-001
+    # Step # | name | target | value
+    # 1 | access chat window 
+    self.driver.find_element(By.CSS_SELECTOR, ".HiSJ3Vx2WM > .chat-icon").click() 
+    self.driver.execute_script("window.scrollTo(0,0)")
+    # 2 | choose shop to chat
+    self.driver.find_element(By.CSS_SELECTOR, ".ZSOu4_Ofaf:nth-child(1) > .Dcv8CzncwR").click()
+    self.driver.execute_script("window.scrollTo(0,0)")
+    # 3 | input message to send | hello shop
+    self.driver.find_element(By.CSS_SELECTOR, ".MdXquzGuDv").click()
+    # 4 | send message
+    self.driver.find_element(By.CSS_SELECTOR, ".MdXquzGuDv").send_keys(text) 
+    self.driver.find_element(By.CSS_SELECTOR, ".efElYaAvMZ > .chat-icon").click()
+
+  @parameterized.expand(readData("send_message")) 
+  def test_tC004002(self):
+    # Test name: TC-004-002
+    # Step # | name | target | value
+    # 1 | access chat window 
+    self.driver.find_element(By.CSS_SELECTOR, ".HiSJ3Vx2WM > .chat-icon").click()
+    self.driver.execute_script("window.scrollTo(0,0)")
+    # 2 | choose shop to chat 
+    self.driver.find_element(By.CSS_SELECTOR, ".ZSOu4_Ofaf:nth-child(1) > .Dcv8CzncwR").click()
+    self.driver.execute_script("window.scrollTo(0,0)")
+    # 3 | input message to send | hello shop 
+    self.driver.find_element(By.CSS_SELECTOR, ".MdXquzGuDv").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".MdXquzGuDv").send_keys(text)
+    # 4 | send message
+    self.driver.find_element(By.CSS_SELECTOR, ".efElYaAvMZ > .chat-icon").click()
 
 if __name__ == '__main__':
     unittest.main()
