@@ -54,6 +54,8 @@ class SearchChat(unittest.TestCase):
     self.driver.implicitly_wait(10)
     self.close_add()
   
+
+#Search Chat Test
   @parameterized.expand(readData("search_chat"))
   def test_tC001001(self,no,text):
     print('Run test 1')
@@ -209,6 +211,101 @@ class SearchChat(unittest.TestCase):
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").click()
     # 9 | type | css=.lKoAzHGT7l | 102tech
     self.driver.find_element(By.CSS_SELECTOR, ".lKoAzHGT7l").send_keys(text)
+
+  
+#Voucher Redeem Test    
+  @parameterized.expand(readData("voucher_redeem"))
+  def test_tC003001(self,no,text):
+      # Test name: Voucher Redeem
+      # Step # | name | target | value
+      # 1 | access profile
+      self.driver.find_element(By.CSS_SELECTOR, ".navbar__username").click()
+      element = self.driver.find_element(By.CSS_SELECTOR, ".i4da\\+9")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+      # 2 | access voucher storage
+      element = self.driver.find_element(By.CSS_SELECTOR, "body")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+      # 3 | access voucher redeem 
+      self.driver.find_element(By.CSS_SELECTOR, ".stardust-dropdown:nth-child(4) .adF7Xs").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".input-with-validator > input").click()
+      # 4 | input voucher | text
+      self.driver.find_element(By.CSS_SELECTOR, ".input-with-validator > input").send_keys(text)
+      self.driver.find_element(By.CSS_SELECTOR, ".ZZd8ua").click()
+      element = self.driver.find_element(By.CSS_SELECTOR, ".ZZd8ua")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+
+  
+  @parameterized.expand(readData("voucher_redeem"))
+  def test_tC003002(self,no,text):
+      # Test name: Voucher Redeem
+      # Step # | name | target | value
+      # 1 | access profile
+      self.driver.find_element(By.CSS_SELECTOR, ".navbar__username").click()
+      element = self.driver.find_element(By.CSS_SELECTOR, ".i4da\\+9")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+      # 2 | access voucher storage
+      element = self.driver.find_element(By.CSS_SELECTOR, "body")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+      # 3 | access voucher redeem 
+      self.driver.find_element(By.CSS_SELECTOR, ".stardust-dropdown:nth-child(4) .adF7Xs").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".input-with-validator > input").click()
+      # 4 | input voucher | text
+      self.driver.find_element(By.CSS_SELECTOR, ".input-with-validator > input").send_keys(text)
+      self.driver.find_element(By.CSS_SELECTOR, ".ZZd8ua").click()
+      element = self.driver.find_element(By.CSS_SELECTOR, ".ZZd8ua")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+
+  @parameterized.expand(readData("voucher_redeem"))
+  def test_tC003003(self,no,text):
+      # Test name: Voucher Redeem
+      # Step # | name | target | value
+      # 1 | access profile
+      self.driver.find_element(By.CSS_SELECTOR, ".navbar__username").click()
+      element = self.driver.find_element(By.CSS_SELECTOR, ".i4da\\+9")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+      # 2 | access voucher storage
+      element = self.driver.find_element(By.CSS_SELECTOR, "body")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+      # 3 | access voucher redeem 
+      self.driver.find_element(By.CSS_SELECTOR, ".stardust-dropdown:nth-child(4) .adF7Xs").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".input-with-validator > input").click()
+      # 4 | input voucher | text
+      self.driver.find_element(By.CSS_SELECTOR, ".input-with-validator > input").send_keys(text)
+      self.driver.find_element(By.CSS_SELECTOR, ".ZZd8ua").click()
+      element = self.driver.find_element(By.CSS_SELECTOR, ".ZZd8ua")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+
+  @parameterized.expand(readData("voucher_redeem"))
+  def test_tC003004(self,no,text):
+      # Test name: Voucher Redeem
+      # Step # | name | target | value
+      # 1 | access profile
+      self.driver.find_element(By.CSS_SELECTOR, ".navbar__username").click()
+      element = self.driver.find_element(By.CSS_SELECTOR, ".i4da\\+9")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+      # 2 | access voucher storage
+      element = self.driver.find_element(By.CSS_SELECTOR, "body")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
+      # 3 | access voucher redeem 
+      self.driver.find_element(By.CSS_SELECTOR, ".stardust-dropdown:nth-child(4) .adF7Xs").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".input-with-validator > input").click()
+      # 4 | input voucher | text
+      self.driver.find_element(By.CSS_SELECTOR, ".input-with-validator > input").send_keys(text)
+      self.driver.find_element(By.CSS_SELECTOR, ".ZZd8ua").click()
+      element = self.driver.find_element(By.CSS_SELECTOR, ".ZZd8ua")
+      actions = ActionChains(self.driver)
+      actions.move_to_element(element).perform()
 
 
 if __name__ == '__main__':
